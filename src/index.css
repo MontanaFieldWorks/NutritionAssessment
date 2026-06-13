@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;750;900&family=JetBrains+Mono:wght@400;550;750&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-slate-900: #111848;
+  --color-slate-800: #0d1236;
+  --color-slate-950: #060920;
+}
+
+/* ----------------- CORE PRINT STYLING SHEET ----------------- */
+@media print {
+  /* Hide standard browser components, backgrounds, headers, and action portals */
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force elements to render background colors neatly inside pdf savers */
+  .bg-slate-50 {
+    background-color: #f8fafc !important;
+  }
+  
+  .bg-slate-100 {
+    background-color: #cbd5e1 !important;
+  }
+
+  .bg-slate-900 {
+    background-color: #111848 !important;
+    color: #ffffff !important;
+  }
+
+  /* Hide raw coaching layouts, widgets, buttons, navigation rules, and file drops */
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  header, nav, button, select, textarea, form, .print-hide, .everfit-importer {
+    display: none !important;
+  }
+
+  /* Make sure print blocks are visible and occupy full scale widths */
+  .hidden {
+    display: none !important;
+  }
+
+  .print\:block {
+    display: block !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+  }
+
+  /* Clean up margins */
+  @page {
+    margin: 1.5cm;
+    size: portrait;
+  }
+
+  table {
+    page-break-inside: avoid !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  /* Typography corrections */
+  h1, h2, h3, h4, strong {
+    color: #020617 !important;
+    font-weight: 800 !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Sharpe Fitness & Nutrition: Client Nutrition Analysis",
+  "description": "A personal trainer nutrition portal. Import Everfit journals, track actual macros vs goal values, calculate client TDEE, and generate aesthetic client PDF reports with interactive charts and automated Gemini-powered dietary recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
