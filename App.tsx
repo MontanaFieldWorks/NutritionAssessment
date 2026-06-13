@@ -1177,19 +1177,19 @@ F
       console.error(err);
       // Fallback response for offline sandbox convenience
       const fallbackReport: NutritionAnalysis = {
-        macroBreakdownFeedback: `${activeClient.name} successfully met protein thresholds across tracked training phases. Average daily protein intake reached ${averageProtein}g, representing ${averageProteinPct}% of metabolic calories. This satisfies high-nitrogen retention goals. Carbs exceeded expectations slightly, especially on ${clientJournal[clientJournal.length - 1]?.date || "high log"} (+${carbsDiff}g from average goals), fueling solid gym energy but potentially extending the calorie deficit timeline slightly.`,
-        calorieAssessment: `Energy consumption is averaging ${averageCalories} kcal relative to the calorie target of ${activeClient.goalCalories} kcal. This creates an dynamic calorie excess of +${calorieDiff} kcal above target, but maintains a net daily deficit of roughly -${activeClient.tdee - averageCalories} kcal vs estimated TDEE (${activeClient.tdee} kcal), providing a solid substrate environment for safe tissue reduction.`,
+        macroBreakdownFeedback: `${activeClient.name} did a great job hitting protein targets! Average daily protein reached ${averageProtein}g, which is ${averageProteinPct}% of your total calories. This is perfect for keeping your muscles strong. Carbs were slightly higher, especially on ${clientJournal[clientJournal.length - 1]?.date || "high log"} (+${carbsDiff}g over the goal), which is great for workout energy but might slow down fat loss just a little bit if it happens too often.`,
+        calorieAssessment: `Your daily calories averaged ${averageCalories} kcal relative to your target of ${activeClient.goalCalories} kcal. While this is ${calorieDiff} kcal over the goal, you are still in a healthy daily calorie deficit of about -${activeClient.tdee - averageCalories} kcal below what you burn (${activeClient.tdee} kcal). This is a great, safe place to be for steady weight loss!`,
         practicalRecommendations: [
-          `Target exactly ${activeClient.proteinGoal}g protein split evenly over 4 daily distributions to maximize muscle protein synthesis.`,
-          "Structure 70% of starchy carbohydrates strictly surrounding physical training intervals.",
-          "Increase raw hydration fluid intake by 500ml on double-cardio sessions."
+          `Try to hit about ${activeClient.proteinGoal}g of protein daily, split up into 3 or 4 meals to help your muscles recover.`,
+          "Save most of your carbs (like rice, potatoes, or bread) for right before or after you work out.",
+          "Drink an extra glass of water on your high-activity workout days to stay fully hydrated."
         ],
         menuSuggestions: [
-          "Swap dense grocery store bread units with calorie-sparing high fiber sprouted alternatives.",
-          "Restrict processed snack bars to pre-workout energy reserves rather than regular passive snacks.",
-          "Use unflavored double-strained yogurt sweetened naturally to control syrup additions."
+          "Swap out heavy grocery store bread for lighter, high-fiber, or sprouted options.",
+          "Try to enjoy processed protein bars as quick workout fuel rather than a regular snack.",
+          "Use plain, unflavored Greek yogurt and sweeten it yourself with a touch of vanilla extract or stevia."
         ],
-        coachingSummary: `Splendid job overall this week, ${activeClient.name}! Your high-quality food choices are establishing a robust micronutrient foundation. Aligning carb timing closer to active exertion slots will make next week even more efficient.`
+        coachingSummary: `You did an awesome job this week, ${activeClient.name}! Your food choices are super healthy, and you're building a solid foundation. If we can time your carbs a bit closer to your workouts, you'll see even faster progress next week. Keep it up!`
       };
 
       const newReportId = `rep-fallback-${Date.now()}`;
@@ -1968,11 +1968,11 @@ F
                   <div className="flex justify-between items-center mt-4">
                     <div>
                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">DAILY AVG</span>
-                      <p className="text-2xl font-black text-slate-900 mt-1">{averageCalories} <span className="text-xs text-gray-400 font-normal">kcal</span></p>
+                      <p className="text-2xl font-black text-slate-900 mt-1">{averageCalories} kcal</p>
                     </div>
                     <div className="text-right">
                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">GOAL</span>
-                      <p className="text-2xl font-black text-slate-700 mt-1">{activeClient.goalCalories} <span className="text-xs text-gray-400 font-normal">kcal</span></p>
+                      <p className="text-2xl font-black text-slate-700 mt-1">{activeClient.goalCalories} kcal</p>
                     </div>
                   </div>
 
@@ -2711,11 +2711,11 @@ F
                   <div className="flex justify-between items-center mt-3 border-b border-gray-200/60 pb-3">
                     <div>
                       <span className="text-[9px] font-bold text-gray-400 uppercase">WEBSITE AVG</span>
-                      <p className="text-lg font-black text-slate-900 mt-0.5">{averageCalories} <span className="text-[10px] text-gray-400 font-normal">kcal</span></p>
+                      <p className="text-lg font-black text-slate-900 mt-0.5">{averageCalories} kcal</p>
                     </div>
                     <div className="text-right">
                       <span className="text-[9px] font-bold text-gray-400 uppercase">PROTOCOL TARGET</span>
-                      <p className="text-lg font-black text-slate-700 mt-0.5">{activeClient.goalCalories} <span className="text-[10px] text-gray-400 font-normal">kcal</span></p>
+                      <p className="text-lg font-black text-slate-700 mt-0.5">{activeClient.goalCalories} kcal</p>
                     </div>
                   </div>
 
